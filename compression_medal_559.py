@@ -44,7 +44,7 @@ def reduce_features(data, p):
 
 # read data from the provided dataset
 dataframe=[]
-with open("C:/Users/Nosac/Desktop/ML_sandbox/static/data/00_559",mode='r') as data:
+with open("/static/data/00_559",mode='r') as data:
     for line in data.readlines():
         dataframe.append(list(map(float,line.strip().split())))
 
@@ -59,7 +59,7 @@ v,X_reduced, y = (reduce_features(df,k))
 
 OPTIONAL: write the reduced feature matrix into the csv file
 
-with(open('C:/Users/Nosac/Desktop/ML_sandbox/00_reduced_features',mode='w',newline=''))as f:
+with(open('00_reduced_features',mode='w',newline=''))as f:
     f.write('\n')
     features_reduced.to_csv(f, sep=' ', index=False, header=False)
     
