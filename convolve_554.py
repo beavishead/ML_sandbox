@@ -24,10 +24,3 @@ def convolve(mtx,wind,n,m,k):
         for ii in range(m-k+1):
             conv[i][ii] = np.sum(np.multiply(mtx[i:i+k,ii:ii+k], wind))
     return conv
-
-"""
-OPTIONALLY: OUTPUT THE RESULT
-
-for line in convolve(matrix,window,n,m,k):
-    print(" ".join([str(int(_))for _ in line]))
-"""
