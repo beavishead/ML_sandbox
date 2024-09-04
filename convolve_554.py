@@ -4,8 +4,8 @@ def convolve(mtx,wind,n,m,k):
 
     """
     Apply the convolution to the given matrix (mtx) with the sliding window (wind)
-    At every step the convolution window is fit to the matrix , all the corresponding
-    elements get multiplied and further summed over between each other
+    Each element of the output matrix is a weighted sum of a k*k block from the input
+    matrix with weights given by the convolution kernel
 
     Args:
         mtx (list : N*M): the inpiut matrix of the dimensions N*M.
