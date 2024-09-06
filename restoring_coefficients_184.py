@@ -21,7 +21,7 @@ alpha = 0.0001  # Smaller learning rate to stabilize training
 for i in range(1000):
     # Defining function
     y_hat = (a * np.sin(x) + b * np.log(x))**2 + c * np.power(x, 2)
-G
+
     # Computing the errors
     errors = y-y_hat
 
