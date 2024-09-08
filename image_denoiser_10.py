@@ -81,3 +81,5 @@ class ImageDenoiser:
 denoiser = ImageDenoiser('static/data/denoising/data.npy')
 denoiser.process_images()
 denoiser.save_images()
+
+
