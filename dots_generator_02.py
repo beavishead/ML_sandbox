@@ -33,17 +33,20 @@ for _ in range(1000):
     dots2.append(x1y1_pair)
 
 #make a plot
-fig, (ax1,ax2,ax3) = plt.subplots(3)
+fig, ((ax1,ax2),(ax3,ax4)) = plt.subplots(2,2)
 x,y = list(zip(*dots))
 x1,y1 = list(zip(*dots2))
 abs_y = [abs(_) for _ in y]
 ax1.scatter(x,y,s=1.9)
 ax2.scatter(x1,y1, s = 1.9,color='r')
 ax3.hist(y,bins=50)
-fig.set_size_inches(5,15)
+ax4.hist(y1,bins=50)
+fig.set_size_inches(10,10)
 ax1.set_xlim([-1.1,1.1])
 ax1.set_ylim([-1.1,1.1])
 
+# save the plots (optionally)
+# plt.savefig("dots_distribution.png",bbox_inches='tight',pad_inches=0.02)
 plt.plot()
 plt.show()
 
