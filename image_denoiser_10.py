@@ -17,6 +17,15 @@ class ImageDenoiser:
             self.images = np.load(file)
         self.pics = []
 
+    def show_save_initial_images(self,output_image_path='static/data/denoising/initial_image'):
+        iter=0
+        for pic in self.images:
+            extension = '.png'
+            img = Image.fromarray(pic, "RGB")
+            img.save(f"{output_image_path}_" + str(iter) + extension)
+            img.show()
+            iter+=1
+
     ### Assign a pixel value to the random non-zero value in its vicinity
     ### If the pixel value is non-zero initially remain it untouched
     ### If there are no non-zero values inside the neighbourhood leave the pixel value 0
@@ -52,7 +61,7 @@ class ImageDenoiser:
     ### apply the filter to every image
     ### check that the colours are not inverted
     ### convert back to 255 for PIL
-    def process_images(self, iterations=3):
+    def process_images(self, iterations=10):
         for img in range(self.images.shape[0]):
             image = self.images[img]
 
@@ -79,7 +88,11 @@ class ImageDenoiser:
 
 # Example of usage
 denoiser = ImageDenoiser('static/data/denoising/data.npy')
+denoiser.show_save_initial_images()
 denoiser.process_images()
 denoiser.save_images()
+
+
+
 
 
